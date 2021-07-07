@@ -1,40 +1,13 @@
-<h4 class="card-title">Pregunta</h4>
+<h4 class="card-title">{{obtenerPregunta()}}</h4>
 <ul class="list-group">
-    <li class="list-group-item">
-        opcion1
-        <span>
+    <li class="list-group-item" *ngFor="let respuesta of listPregunta[preguntaService.indexPregunta].respuestas">
+        {{respuesta.nombre}}
+        <!-- <span>
             <i class="material-icons correct">check_circle</i>
         </span>
         <span>
             <i class="material-icons incorrect">clear</i>
-        </span>
-    </li>
-    <li class="list-group-item">
-        opcion2
-        <span>
-            <i class="material-icons correct">check_circle</i>
-        </span>
-        <span>
-            <i class="material-icons incorrect">clear</i>
-        </span>
-    </li>
-    <li class="list-group-item">
-        opcion3
-        <span>
-            <i class="material-icons correct">check_circle</i>
-        </span>
-        <span>
-            <i class="material-icons incorrect">clear</i>
-        </span>
-    </li>
-    <li class="list-group-item">
-        opcion4
-        <span>
-            <i class="material-icons correct">check_circle</i>
-        </span>
-        <span>
-            <i class="material-icons incorrect">clear</i>
-        </span>
+        </span> -->
     </li>
 </ul>
 <br>
