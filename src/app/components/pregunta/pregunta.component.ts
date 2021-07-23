@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Pregunta } from 'src/app/models/pregunta';
+import { Respuesta } from 'src/app/models/respuesta';
 import { PreguntaService } from 'src/app/services/pregunta.service';
 
 @Component({
@@ -18,5 +19,15 @@ export class PreguntaComponent implements OnInit {
   }
 obtenerPregunta(){
   return this.listPregunta[this.preguntaService.indexPregunta].descripcionPregunta;
+}
+respuestaSeleccionada(respuesta:Respuesta){
+  this.preguntaService.opcionSeleccionada = respuesta;
+  this.preguntaService.deshabilitarBtn = false;
+}
+AddClassOption(respuesta:Respuesta){
+  if(respuesta === this.preguntaService.opcionSeleccionada){
+    console.log(respuesta.nombre);
+    // return 'active text-light';
+  }
 }
 }
